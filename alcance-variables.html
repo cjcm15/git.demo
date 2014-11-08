@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="JavaScript Ejemplos varios">
+    <title>Alcance de las variables</title>
+</head>
+<body>
+<script>
+function creaMensaje() {
+  mensaje = "Mensaje de prueba 1 sin var";
+  var mensaje = "Mensaje de prueba 1 con var";
+}
+creaMensaje();
+alert(mensaje); // no funciona porque mensaje solo vale dentro de la funcion , lleve o no var delante de la funcion.
+
+
+function creaMensaje() {
+  var mensaje = "Mensaje de prueba 2";
+  alert(mensaje);  // esto si funciona porque la variable se usa dentro de la funcion
+}
+creaMensaje();
+
+
+</script>
+
+<script>
+
+function creaMensaje(texto) { // funcion con parametro
+  var mensaje = texto;
+  alert(mensaje);  // esto si funciona porque la variable se usa dentro de la funcion
+}
+creaMensaje('Hola Mundo');
+
+
+</script>
+<h1>
+Variable globales.
+Para que las variables sean globales, si se usa var hay que declararlas fuera de la funcion.
+<br>
+Si no se usa var, se pueden declarar dentro de la funcion y serán globales
+</h1>
+<script>
+
+var mensaje = "Mensaje de prueba variable global";
+
+function muestraMensaje() {
+  alert(mensaje);
+}
+
+muestraMensaje()
+
+//***************************************************************
+
+
+
+</script>
+
+<script>
+var resultado = 1;
+
+function suma(x1,x2){
+   resultado = x1 + x2;
+}
+suma(100,505);
+alert('valor de la variable resultado = ' +resultado);
+document.write('valor de la variable resultado = ' +resultado);
+
+</script>
+
+<script>
+
+//***************************************************
+function sumaSinVar(x1,x2){
+   resultadoSinVar = x1 + x2;
+}
+
+sumaSinVar(1000000,505);
+//alert('valor de la variable resultado definida dentro de la funcion sin var = ' +resultadoSinVar);
+document.write('<br>valor de la variable resultado definida dentro de la funcion sin var= ' +resultadoSinVar);
+
+</script>
+<h1>Si dentro de un script hay un error el script no se ejecuta a partir del error como ocurre con el script que esta a continuacion.</h1>
+<script>
+
+document.write('Veremos si esto se ejecuta antes del error');
+
+function sumaConVar(x1,x2){
+   var resultadoConVar = x1 + x2;
+}
+
+sumaConVar(100,505);
+//alert('valor de la variable resultado definida dentro de la funcion Con var = ' +resultadoConVar);
+document.write('valor de la variable resultado definida dentro de la funcion Con var= ' +resultadoConVar);
+
+document.write('Veremos si esto se ejecuta despues del error');
+</script>
+</body>
+</html>
