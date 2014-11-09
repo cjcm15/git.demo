@@ -1,0 +1,13 @@
+diff a/alcance-variables.html b/alcance-variables.html	(rejected hunks)
+@@ -34,6 +34,11 @@
+ 
+ 
+ </script>
++
++
++Nuevo cambio 5
++
++
+ <h1>
+ Variable globales.
+ Para que las variables sean globales, si se usa var hay que declararlas fuera de la funcion.
